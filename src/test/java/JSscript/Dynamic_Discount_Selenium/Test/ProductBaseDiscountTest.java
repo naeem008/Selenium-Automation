@@ -1,9 +1,7 @@
 package JSscript.Dynamic_Discount_Selenium.Test;
 
-import java.awt.RenderingHints.Key;
+import java.io.IOException;
 import java.time.Duration;
-import java.util.Scanner;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -15,8 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.annotations.TestInstance;
-
 import Utils.URLTextUtils;
 import Utils.WebDriveUtils;
 import Xpath.Xpath;
@@ -34,14 +30,14 @@ public class ProductBaseDiscountTest {
 
 		driver.get(URLTextUtils.LoginUrl.BaseUrl);
 		driver.findElement(By.xpath(Xpath.login.USERNAME_INPUT)).sendKeys("admin");
-		Thread.sleep(10000);
+		Thread.sleep(2500);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.findElement(By.xpath(Xpath.login.PASSWORD_INPUT)).sendKeys("admin");
 		driver.findElement(By.xpath(Xpath.login.LOGIN_BUTTON)).click();
 	}
 
 	@Test
-	public void TestforProductBaseDiscount() throws InterruptedException {
+	public void TestforProductBaseDiscount() throws IOException, InterruptedException {
 		driver.findElement(By.xpath(GoToDynamicDiscount.ELEMENT_TO_HOVER)).click();
 		driver.findElement(By.xpath(GoToDynamicDiscount.TARGET_ELEMENT)).click();
 		driver.findElement(By.xpath(ProductBaseDiscount.BUTTON_TO_CLICK)).click();
@@ -101,13 +97,13 @@ public class ProductBaseDiscountTest {
 		driver.findElement(By.xpath(WooCOmmerce.CLICKONVIEWCART)).click();
 		driver.findElement(By.xpath(WooCOmmerce.PROCEEDTOCHECKOUT)).click();
 
-		Thread.sleep(10000);
-
 		JavascriptExecutor scrolldown = (JavascriptExecutor) driver;
 		scrolldown.executeScript("window.scrollBy(0,-350)", "");
-		driver.findElement(By.xpath(WooCOmmerce.CLICKONPLACEORDER)).click();
 		
-		Thread.sleep(1000);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(WooCOmmerce.CLICKONPLACEORDER)).click();
+
+		Thread.sleep(5000);
 
 		WebDriverWait wait11 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait11.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("body")));
@@ -149,22 +145,22 @@ public class ProductBaseDiscountTest {
 		String amountText = amountElement.getText();
 		System.out.println("Amount Text is : " + amountText);
 
-		String amountValue = amountText.replace("৳", "").replace(",", "").trim();
+		String amountValue = amountText.replace("$", "").replace(",", "").trim();
 		System.out.println("Amount Value is : " + amountValue);
 
 		// Convert the amount value to a double
 		double amount = Double.parseDouble(amountValue);
 		System.out.println("Amount after conversion is : " + amount);
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Enter the expected amount: ");
-		double expectedAmount = scanner.nextDouble();
+		// Predefined expected amount
+		double expectedAmount = 16.00; // Set the expected amount value here
 
 		System.out.println("Expected Amount is : " + expectedAmount);
-		scanner.close();
 
-		Assert.assertEquals(amount, expectedAmount, "Amount does not match the expected value!");
+		// Adding more logging before the assertion
+		System.out.println("Asserting the amount value...");
+		Assert.assertEquals(amount, expectedAmount);
 
-		//driver.quit();
+		
 	}
 }
