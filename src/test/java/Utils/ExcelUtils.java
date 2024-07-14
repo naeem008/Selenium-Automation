@@ -12,9 +12,11 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.streaming.SXSSFRow.CellIterator;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import DTO.LoginDTO;
+import DTO.ProductDTO;
 
 public class ExcelUtils {
 
@@ -71,4 +73,31 @@ public class ExcelUtils {
 		// workbook.close();
 		return logindata;
 	}
+
+	public static List<ProductDTO> getProductDTO() throws IOException {
+		List<ProductDTO> productdata = new ArrayList<ProductDTO>();
+		DataFormatter pDataFormatter = new DataFormatter();
+		Iterator<Row> rowIterator = ExcelUtils.getSheet(1).iterator();
+
+		while (rowIterator.hasNext()) {
+			Row nexRow1 = rowIterator.next();
+			Iterator<Cell> celIterator1 = nexRow1.cellIterator();
+			ProductDTO productDTO = new ProductDTO();
+			byte cellcounter1 = 0;
+
+			while (celIterator1.hasNext()) {
+				Cell cell1 = celIterator1.next();
+
+				switch (cellcounter1) {
+				case 0:
+							productDTO.setProductName(pDataFormatter.formatCellValue(cell1));
+					break;
+
+				}
+			}
+			productdata.add(productDTO);
+		}
+		return productdata;
+	}
+
 }
