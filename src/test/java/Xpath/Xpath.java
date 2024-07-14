@@ -2,7 +2,7 @@ package Xpath;
 
 public class Xpath {
 
-	public class login {
+	public class loginXpath {
 
 		public static final String USERNAME_INPUT = "/html/body/div/form/p[1]/input";
 		public static final String PASSWORD_INPUT = "/html/body/div/form/div/div/input";

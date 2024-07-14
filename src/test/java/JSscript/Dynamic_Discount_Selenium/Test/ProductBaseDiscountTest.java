@@ -2,6 +2,9 @@ package JSscript.Dynamic_Discount_Selenium.Test;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -11,8 +14,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import DTO.LoginDTO;
+import DataProvider.LoginDataProvider;
 import Utils.URLTextUtils;
 import Utils.WebDriveUtils;
 import Xpath.Xpath;
@@ -22,22 +27,31 @@ import Xpath.Xpath.WooCOmmerce;
 
 public class ProductBaseDiscountTest {
 
-	private WebDriver driver;
+    private WebDriver driver;
 
-	@BeforeTest
-	public void Login() throws InterruptedException {
-		driver = WebDriveUtils.initializeDriver();
+	/*
+	 * @BeforeTest public void Login() throws InterruptedException {
+	 * 
+	 * }
+	 */
 
-		driver.get(URLTextUtils.LoginUrl.BaseUrl);
-		driver.findElement(By.xpath(Xpath.login.USERNAME_INPUT)).sendKeys("admin");
-		Thread.sleep(2500);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		driver.findElement(By.xpath(Xpath.login.PASSWORD_INPUT)).sendKeys("admin");
-		driver.findElement(By.xpath(Xpath.login.LOGIN_BUTTON)).click();
-	}
+    @Test(dataProvider = "loginData", dataProviderClass = LoginDataProvider.class)
+    public void LoginTest(List<LoginDTO> logdata) throws InterruptedException {
+    	driver = WebDriveUtils.initializeDriver();
+        driver.get(URLTextUtils.LoginUrl.BaseUrl);
+        
+        for(LoginDTO login : logdata)
+        {
+            driver.findElement(By.xpath(Xpath.loginXpath.USERNAME_INPUT)).sendKeys(login.getUsername());
+            Thread.sleep(2500);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+            driver.findElement(By.xpath(Xpath.loginXpath.PASSWORD_INPUT)).sendKeys(login.getPassword());
+            driver.findElement(By.xpath(Xpath.loginXpath.LOGIN_BUTTON)).click();
+        }
+    }
 
-	@Test
-	public void TestforProductBaseDiscount() throws IOException, InterruptedException {
+    @Test 
+    public void TestforProductBaseDiscount() throws IOException, InterruptedException {
 		driver.findElement(By.xpath(GoToDynamicDiscount.ELEMENT_TO_HOVER)).click();
 		driver.findElement(By.xpath(GoToDynamicDiscount.TARGET_ELEMENT)).click();
 		driver.findElement(By.xpath(ProductBaseDiscount.BUTTON_TO_CLICK)).click();
