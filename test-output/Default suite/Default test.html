@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 15 01:01:57 BDT 2024</td>
+<td>Started on:</td><td>Thu Jul 18 01:25:46 BDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>8 seconds (8081 ms)</td>
+<tr><td>Total time:</td><td>52 seconds (52806 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount()'><b>TestforProductBaseDiscount</b><br>Test class: JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: /html/body/div[1]/div[1]/div[2]/ul/li[11]/a/div[3]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:55)
+<td title='JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount()'><b>TestforProductBaseDiscount</b><br>Test class: JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest<br>Parameters: [ProductDataProvider [productName=Beanie, expectedamount=null]]</td>
+<td><div><pre>java.lang.AssertionError: expected [60.0] but found [57.6]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:765)
+	at org.testng.Assert.assertEquals(Assert.java:795)
+	at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:204)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -115,17 +113,15 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1410008136", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1410008136'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: /html/body/div[1]/div[1]/div[2]/ul/li[11]/a/div[3]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:55)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1875025322", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1875025322'><pre>java.lang.AssertionError: expected [60.0] but found [57.6]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:765)
+	at org.testng.Assert.assertEquals(Assert.java:795)
+	at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:204)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -155,7 +151,7 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
+<td>45</td>
 <td>JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -169,7 +165,7 @@ Driver info: driver.version: RemoteWebDriver
 <tr>
 <td title='JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.LoginTest()'><b>LoginTest</b><br>Test class: JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest<br>Parameters: [LoginDTO [username=admin, password=admin]]</td>
 <td></td>
-<td>7</td>
+<td>6</td>
 <td>JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae</td></tr>
 </table><p>
 </body>

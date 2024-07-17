@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-15T01:01:57 BDT" name="Default suite" finished-at="2024-07-15T01:02:05 BDT" duration-ms="8081">
+  <suite started-at="2024-07-18T01:25:46 BDT" name="Default suite" finished-at="2024-07-18T01:26:39 BDT" duration-ms="52806">
     <groups>
     </groups>
-    <test started-at="2024-07-15T01:01:57 BDT" name="Default test" finished-at="2024-07-15T01:02:05 BDT" duration-ms="8081">
+    <test started-at="2024-07-18T01:25:46 BDT" name="Default test" finished-at="2024-07-18T01:26:39 BDT" duration-ms="52806">
       <class name="JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest">
-        <test-method signature="LoginTest(java.util.List)[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae]" started-at="2024-07-15T01:01:57 BDT" name="LoginTest" data-provider="loginData" finished-at="2024-07-15T01:02:05 BDT" duration-ms="7604" status="PASS">
+        <test-method signature="LoginTest(java.util.List)[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae]" started-at="2024-07-18T01:25:47 BDT" name="LoginTest" data-provider="loginData" finished-at="2024-07-18T01:25:54 BDT" duration-ms="6978" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,26 +18,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTest -->
-        <test-method signature="TestforProductBaseDiscount()[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae]" started-at="2024-07-15T01:02:05 BDT" name="TestforProductBaseDiscount" finished-at="2024-07-15T01:02:05 BDT" duration-ms="20" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="TestforProductBaseDiscount(java.util.List)[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae]" started-at="2024-07-18T01:25:54 BDT" name="TestforProductBaseDiscount" data-provider="ProductData" finished-at="2024-07-18T01:26:39 BDT" duration-ms="45210" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[ProductDataProvider [productName=Beanie, expectedamount=null]]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unable to find element with locator By.xpath: /html/body/div[1]/div[1]/div[2]/ul/li[11]/a/div[3]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
-Driver info: driver.version: RemoteWebDriver]]>
+              <![CDATA[expected [60.0] but found [57.6]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: /html/body/div[1]/div[1]/div[2]/ul/li[11]/a/div[3]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:55)
+              <![CDATA[java.lang.AssertionError: expected [60.0] but found [57.6]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:765)
+at org.testng.Assert.assertEquals(Assert.java:795)
+at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:204)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -68,7 +69,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestforProductBaseDiscount -->

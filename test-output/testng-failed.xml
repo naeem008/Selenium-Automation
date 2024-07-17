@@ -5,7 +5,7 @@
     <classes>
       <class name="JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest">
         <methods>
-          <include name="TestforProductBaseDiscount"/>
+          <include name="TestforProductBaseDiscount" invocation-numbers="0"/>
         </methods>
       </class> <!-- JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest -->
     </classes>

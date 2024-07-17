@@ -15,6 +15,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.streaming.SXSSFRow.CellIterator;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import DTO.ExpectedAmountDTO;
 import DTO.LoginDTO;
 import DTO.ProductDTO;
 
@@ -99,5 +100,32 @@ public class ExcelUtils {
 		}
 		return productdata;
 	}
-
+	
+//	public static List<ExpectedAmountDTO> ExpectedData() throws IOException
+//	{
+//		List<ExpectedAmountDTO> expectedAmount = new ArrayList<ExpectedAmountDTO>();
+//		DataFormatter dataFormatter = new DataFormatter();
+//		Iterator<Row> nextRox002 = ExcelUtils.getSheet(2).iterator();
+//		while(nextRox002.hasNext())
+//		{
+//			Row row002 = nextRox002.next();
+//			Iterator<Cell> cell002 = row002.cellIterator();
+//			ExpectedAmountDTO expectedAmountDTO = new ExpectedAmountDTO();
+//			byte cellcounter = 0;
+//			
+//			while(cell002.hasNext())
+//			{
+//				Cell cell = cell002.next();
+//				
+//				switch (cellcounter) {
+//				case 0:
+//					expectedAmountDTO.setExpectedAmount(dataFormatter.formatCellValue(cell));
+//					break;
+//
+//				}
+//			}
+//			expectedAmount.add(expectedAmountDTO);
+//		}
+//		return expectedAmount;
+//	}
 }

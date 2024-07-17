@@ -30,7 +30,7 @@ public class Xpath {
 		public static final String CLICKONSEARCH = "/html/body/div[2]/header/div[1]/div[2]/div/form/input[1]";
 		//public static final String CLICKONPOLO   = "/html/body/div[2]/div[2]/div/div[2]/main/article/header/h2/a";
 		public static final String CLICKONADDTOCART = "/html/body/div[2]/div[2]/div/div[2]/main/div[2]/div[2]/form/button";
-		public static final String CLICKONVIEWCART = "/html/body/div[2]/div[2]/div/div[1]/div/a";
+		public static final String CLICKONVIEWCART = "/html/body/div[2]/div[2]/div/div[2]/main/ul/li[2]/a[3]";
 		public static final String PROCEEDTOCHECKOUT = "/html/body/div[2]/div[2]/div/div[2]/main/article/div[1]/div/div[2]/div/div/a";
 		public static final String CLICKONPLACEORDER = "/html/body/div[2]/div[2]/div/div[1]/main/article/div[1]/div/form[2]/div[2]/div/div/button";
 		
