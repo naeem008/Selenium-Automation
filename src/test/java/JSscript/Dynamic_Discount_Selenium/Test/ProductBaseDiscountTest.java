@@ -2,11 +2,9 @@ package JSscript.Dynamic_Discount_Selenium.Test;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-import org.apache.commons.math3.analysis.function.Add;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -25,9 +23,10 @@ import DataProvider.ProductDataProvider;
 import Utils.URLTextUtils;
 import Utils.WebDriveUtils;
 import Xpath.Xpath;
+import Xpath.Xpath.GlobalXpath;
 import Xpath.Xpath.GoToDynamicDiscount;
-import Xpath.Xpath.ProductBaseDiscount;
-import Xpath.Xpath.WooCOmmerce;
+
+import Xpath.Xpath.WooCommerce;
 
 public class ProductBaseDiscountTest {
 
@@ -61,8 +60,8 @@ public class ProductBaseDiscountTest {
     	{
     		driver.findElement(By.xpath(GoToDynamicDiscount.ELEMENT_TO_HOVER)).click();
     		driver.findElement(By.xpath(GoToDynamicDiscount.TARGET_ELEMENT)).click();
-    		driver.findElement(By.xpath(ProductBaseDiscount.BUTTON_TO_CLICK)).click();
-    		driver.findElement(By.xpath(ProductBaseDiscount.DISCOUNT_INPUT)).sendKeys("Product Base Discount");
+    		driver.findElement(By.xpath(GlobalXpath.BUTTON_TO_CLICK)).click();
+    		driver.findElement(By.xpath(GlobalXpath.DISCOUNT_INPUT)).sendKeys("Product Base Discount");
 
     		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     		WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("discount_type")));
@@ -73,9 +72,9 @@ public class ProductBaseDiscountTest {
     		// Select the "Product Base Discount" option by visible text
     		select.selectByVisibleText("Product Base Discount");
 
-    		driver.findElement(By.xpath(ProductBaseDiscount.DISCOUNT_AMOUNT_INPUT)).sendKeys("20");
+    		driver.findElement(By.xpath(GlobalXpath.DISCOUNT_AMOUNT_INPUT)).sendKeys("20");
 
-    		WebElement discouOption = driver.findElement(By.xpath(ProductBaseDiscount.ClickOnDsicountOption));
+    		WebElement discouOption = driver.findElement(By.xpath(GlobalXpath.ClickOnDsicountOption));
     		discouOption.click();
     		Select select2 = new Select(discouOption);
 
@@ -103,14 +102,14 @@ public class ProductBaseDiscountTest {
     		productOption.click();
 
     		// Click on submit
-    		driver.findElement(By.xpath(ProductBaseDiscount.CLICKONSUBMIT)).click();
+    		driver.findElement(By.xpath(GlobalXpath.CLICKONSUBMIT)).click();
 
     		// Go to WooCommerce Shop
 
     		driver.get(URLTextUtils.WooCommerceShop.WooShop);
 
     		// Search Product
-    		WebElement searchproduct = driver.findElement(By.xpath(WooCOmmerce.CLICKONSEARCH));
+    		WebElement searchproduct = driver.findElement(By.xpath(WooCommerce.CLICKONSEARCH));
     		searchproduct.sendKeys(product.getProductName());
     		searchproduct.sendKeys(Keys.ENTER);
     		
@@ -130,14 +129,14 @@ public class ProductBaseDiscountTest {
     		
 
     		//driver.findElement(By.xpath(WooCOmmerce.CLICKONADDTOCART)).click();
-    		driver.findElement(By.xpath(WooCOmmerce.CLICKONVIEWCART)).click();
-    		driver.findElement(By.xpath(WooCOmmerce.PROCEEDTOCHECKOUT)).click();
+    		driver.findElement(By.xpath(WooCommerce.CLICKONVIEWCART)).click();
+    		driver.findElement(By.xpath(WooCommerce.PROCEEDTOCHECKOUT)).click();
 
     		JavascriptExecutor scrolldown = (JavascriptExecutor) driver;
     		scrolldown.executeScript("window.scrollBy(0,-350)", "");
     		
     		Thread.sleep(5000);
-    		driver.findElement(By.xpath(WooCOmmerce.CLICKONPLACEORDER)).click();
+    		driver.findElement(By.xpath(WooCommerce.CLICKONPLACEORDER)).click();
 
     		Thread.sleep(5000);
 

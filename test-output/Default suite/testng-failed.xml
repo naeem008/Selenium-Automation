@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest">
+      <class name="JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest">
         <methods>
-          <include name="TestforProductBaseDiscount" invocation-numbers="0"/>
+          <include name="TestBulkProduct" invocation-numbers="0"/>
+          <include name="LoginTest"/>
         </methods>
-      </class> <!-- JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest -->
+      </class> <!-- JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

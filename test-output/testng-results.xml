@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-18T01:25:46 BDT" name="Default suite" finished-at="2024-07-18T01:26:39 BDT" duration-ms="52806">
+  <suite started-at="2024-07-24T17:48:24 BDT" name="Default suite" finished-at="2024-07-24T17:49:11 BDT" duration-ms="46735">
     <groups>
     </groups>
-    <test started-at="2024-07-18T01:25:46 BDT" name="Default test" finished-at="2024-07-18T01:26:39 BDT" duration-ms="52806">
-      <class name="JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest">
-        <test-method signature="LoginTest(java.util.List)[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae]" started-at="2024-07-18T01:25:47 BDT" name="LoginTest" data-provider="loginData" finished-at="2024-07-18T01:25:54 BDT" duration-ms="6978" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[LoginDTO [username=admin, password=admin]]]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2024-07-24T17:48:24 BDT" name="Default test" finished-at="2024-07-24T17:49:11 BDT" duration-ms="46735">
+      <class name="JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest">
+        <test-method is-config="true" signature="LoginTest()[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest@15bb5034]" started-at="2024-07-24T17:48:24 BDT" name="LoginTest" finished-at="2024-07-24T17:48:37 BDT" duration-ms="13187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTest -->
-        <test-method signature="TestforProductBaseDiscount(java.util.List)[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest@4d5650ae]" started-at="2024-07-18T01:25:54 BDT" name="TestforProductBaseDiscount" data-provider="ProductData" finished-at="2024-07-18T01:26:39 BDT" duration-ms="45210" status="FAIL">
+        <test-method signature="TestBulkProduct(java.util.List)[pri:0, instance:JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest@15bb5034]" started-at="2024-07-24T17:48:38 BDT" name="TestBulkProduct" data-provider="BulkData" finished-at="2024-07-24T17:49:11 BDT" duration-ms="33057" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[ProductDataProvider [productName=Beanie, expectedamount=null]]]]>
+                <![CDATA[[BulkProductDTO [products=Polo], BulkProductDTO [products=Polo]]]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [60.0] but found [57.6]]]>
+              <![CDATA[expected [220.00] but found [220.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [60.0] but found [57.6]
+              <![CDATA[java.lang.AssertionError: expected [220.00] but found [220.]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:765)
-at org.testng.Assert.assertEquals(Assert.java:795)
-at JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest.TestforProductBaseDiscount(ProductBaseDiscountTest.java:204)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest.TestBulkProduct(BundleProductDiscountTest.java:145)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -72,8 +65,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestforProductBaseDiscount -->
-      </class> <!-- JSscript.Dynamic_Discount_Selenium.Test.ProductBaseDiscountTest -->
+        </test-method> <!-- TestBulkProduct -->
+      </class> <!-- JSscript.Dynamic_Discount_Selenium.Test.BundleProductDiscountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

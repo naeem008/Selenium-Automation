@@ -12,12 +12,14 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.streaming.SXSSFRow.CellIterator;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import DTO.ExpectedAmountDTO;
+import DTO.BulkProductDTO;
+import DTO.CartTestProductDTO;
 import DTO.LoginDTO;
 import DTO.ProductDTO;
+import DTO.StockBaseDTO;
+import DataProvider.CartProductDataProvider;
 
 public class ExcelUtils {
 
@@ -91,7 +93,7 @@ public class ExcelUtils {
 
 				switch (cellcounter1) {
 				case 0:
-							productDTO.setProductName(pDataFormatter.formatCellValue(cell1));
+					productDTO.setProductName(pDataFormatter.formatCellValue(cell1));
 					break;
 
 				}
@@ -100,7 +102,7 @@ public class ExcelUtils {
 		}
 		return productdata;
 	}
-	
+
 //	public static List<ExpectedAmountDTO> ExpectedData() throws IOException
 //	{
 //		List<ExpectedAmountDTO> expectedAmount = new ArrayList<ExpectedAmountDTO>();
@@ -128,4 +130,128 @@ public class ExcelUtils {
 //		}
 //		return expectedAmount;
 //	}
+
+	public static List<CartTestProductDTO> getCdata() throws IOException {
+
+		List<CartTestProductDTO> cartTestProductDTOs = new ArrayList<CartTestProductDTO>();
+		DataFormatter formater = new DataFormatter();
+		Iterator<Row> rowiIterator003 = ExcelUtils.getSheet(2).iterator();
+
+		while (rowiIterator003.hasNext()) {
+			Row nextRow = rowiIterator003.next();
+			Iterator<Cell> cellIterator = nextRow.cellIterator();
+			CartTestProductDTO cdata = new CartTestProductDTO();
+			byte cellcounter = 0;
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+
+				switch (cellcounter) {
+				case 0:
+					cdata.setCproductDTO1(formater.formatCellValue(cell));
+					cellcounter++;
+					break;
+				case 1:
+					cdata.setCproductDTO2(formater.formatCellValue(cell));
+					break;
+
+				}
+			}
+
+			cartTestProductDTOs.add(cdata);
+
+		}
+		// workbook.close();
+		return cartTestProductDTOs;
+
+	}
+
+	public static List<BulkProductDTO> getBulkData() throws IOException {
+		List<BulkProductDTO> bulkProductData = new ArrayList<BulkProductDTO>();
+		DataFormatter dataFormatter = new DataFormatter();
+		Iterator<Row> roIterator = ExcelUtils.getSheet(3).iterator();
+
+		while (roIterator.hasNext()) {
+			Row row = roIterator.next();
+			Iterator<Cell> ceIterator = row.cellIterator();
+			BulkProductDTO bulkProduct = new BulkProductDTO();
+
+			byte cellcounter = 0;
+			while (ceIterator.hasNext()) {
+				Cell cell = ceIterator.next();
+
+				switch (cellcounter) {
+				case 0:
+					bulkProduct.setProducts(dataFormatter.formatCellValue(cell));
+					break;
+
+				}
+				bulkProductData.add(bulkProduct);
+			}
+
+		}
+		return bulkProductData;
+	}
+
+	public static List<StockBaseDTO> getStockData() throws IOException {
+		List<StockBaseDTO> stockdata = new ArrayList<StockBaseDTO>();
+		DataFormatter dataFormatter = new DataFormatter();
+		Iterator<Row> roIterator = ExcelUtils.getSheet(4).iterator();
+
+		while (roIterator.hasNext()) {
+			Row row = roIterator.next();
+			Iterator<Cell> ceIterator = row.cellIterator();
+
+			StockBaseDTO stockBaseDTO = new StockBaseDTO();
+			byte cellcounter = 0;
+
+			while (ceIterator.hasNext()) {
+				Cell cell = ceIterator.next();
+
+				switch (cellcounter) {
+				case 0:
+					stockBaseDTO.setProduct1(dataFormatter.formatCellValue(cell));
+					cellcounter++;
+					break;
+
+				case 1:
+					stockBaseDTO.setProduct2(dataFormatter.formatCellValue(cell));
+					break;
+				default:
+					break;
+				}
+			}
+			stockdata.add(stockBaseDTO);
+
+		}
+		return stockdata;
+	}
+
+	public static List<BulkProductDTO> getBundleSetData() throws IOException
+
+	{
+		List<BulkProductDTO> bundle = new ArrayList<BulkProductDTO>();
+		DataFormatter dataFormatter = new DataFormatter();
+		Iterator<Row> rIterator = ExcelUtils.getSheet(6).iterator();
+
+		while (rIterator.hasNext()) {
+			Row row = rIterator.next();
+			Iterator<Cell> cIterator = row.iterator();
+			BulkProductDTO bulkProductDTO = new BulkProductDTO();
+			byte cellcounter = 0;
+
+			while (cIterator.hasNext()) {
+				Cell cell = cIterator.next();
+
+				switch (cellcounter) {
+				case 0:
+					bulkProductDTO.setProducts(dataFormatter.formatCellValue(cell));
+					break;
+
+				}
+			}
+			bundle.add(bulkProductDTO);
+
+		}
+		return bundle;
+	}
 }
